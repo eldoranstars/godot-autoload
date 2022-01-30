@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Roboto-Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Sprite.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 54
@@ -30,5 +32,36 @@ icon = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="Ball" parent="." instance=ExtResource( 4 )]
+position = Vector2( 546, 68 )
+
+[node name="Ball2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 839, 191 )
+gravity_scale = 44.0
+
+[node name="Ball3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 412, 121 )
+gravity_scale = 1.0
+
+[node name="Ball4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 576, 187 )
+
+[node name="Ball5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 389, 236 )
+gravity_scale = 1.0
+
+[node name="Ball6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 735, 125 )
+gravity_scale = 22.0
+
+[node name="Ball7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 301, 115 )
+gravity_scale = 10.0
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
